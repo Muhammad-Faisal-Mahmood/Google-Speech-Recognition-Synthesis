@@ -1,0 +1,60 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+public final class gmu
+extends hwv
+implements hyg {
+    public static final gmu a;
+    private static volatile hym d;
+    public int b;
+    public int c;
+
+    static {
+        gmu gmu2;
+        a = gmu2 = new gmu();
+        hwv.z(gmu.class, gmu2);
+    }
+
+    private gmu() {
+    }
+
+    /*
+     * Enabled aggressive block sorting
+     * Enabled unnecessary exception pruning
+     * Enabled aggressive exception aggregation
+     */
+    @Override
+    protected final Object a(int n2, Object object) {
+        if (--n2 == 0) {
+            return (byte)1;
+        }
+        if (n2 == 2) {
+            return new hyq(a, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u1004\u0000", new Object[]{"b", "c"});
+        }
+        if (n2 == 3) {
+            return new gmu();
+        }
+        if (n2 == 4) {
+            return new hwp(a);
+        }
+        if (n2 == 5) {
+            return a;
+        }
+        if (n2 != 6) {
+            return null;
+        }
+        hym hym2 = d;
+        object = hym2;
+        if (hym2 == null) {
+            synchronized (gmu.class) {
+                hym2 = d;
+                object = hym2;
+                if (hym2 == null) {
+                    d = object = new hwq(a);
+                }
+            }
+        }
+        return object;
+    }
+}
+

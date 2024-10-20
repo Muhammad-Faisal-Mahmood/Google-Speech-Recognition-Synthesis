@@ -1,0 +1,9 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+public final class fwa {
+    public static final int[] a = new int[]{2130968705, 2130968706};
+    public static final int[] b = new int[]{0x101000E, 2130968672, 2130968673, 2130968722, 2130969119, 2130969141, 2130969188, 2130969189, 2130969283, 2130969305, 2130969565, 2130969737, 2130969766, 2130969802, 2130969813, 2130969836, 2130970149};
+    public static final int[] c = new int[]{2130968705};
+}
+

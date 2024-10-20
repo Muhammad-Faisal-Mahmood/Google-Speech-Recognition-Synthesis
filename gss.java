@@ -1,0 +1,31 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+public final class gss
+extends gsp {
+    private final char a;
+    private final char b;
+
+    public gss(char c2, char c3) {
+        this.a = c2;
+        this.b = c3;
+    }
+
+    @Override
+    public final boolean b(char c2) {
+        return c2 == this.a || c2 == this.b;
+        {
+        }
+    }
+
+    public final String toString() {
+        String string = gsy.d(this.a);
+        String string2 = gsy.d(this.b);
+        StringBuilder stringBuilder = new StringBuilder("CharMatcher.anyOf(\"");
+        stringBuilder.append(string);
+        stringBuilder.append(string2);
+        stringBuilder.append("\")");
+        return stringBuilder.toString();
+    }
+}
+

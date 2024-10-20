@@ -1,0 +1,7 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+public final class ipw {
+    public static final inc a = new inc(13);
+}
+

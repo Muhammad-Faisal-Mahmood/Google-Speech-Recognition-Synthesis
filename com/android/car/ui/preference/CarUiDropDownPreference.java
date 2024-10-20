@@ -1,0 +1,89 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  android.content.Context
+ *  android.util.AttributeSet
+ */
+package com.android.car.ui.preference;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import androidx.preference.DropDownPreference;
+import androidx.preference.Preference;
+import java.util.function.Consumer;
+
+public class CarUiDropDownPreference
+extends DropDownPreference
+implements bkw {
+    private Consumer mRestrictedClickListener;
+    private boolean mUxRestricted = false;
+
+    public CarUiDropDownPreference(Context context) {
+        super(context);
+    }
+
+    public CarUiDropDownPreference(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+    }
+
+    public CarUiDropDownPreference(Context context, AttributeSet attributeSet, int n2) {
+        super(context, attributeSet, n2);
+    }
+
+    public CarUiDropDownPreference(Context context, AttributeSet attributeSet, int n2, int n3) {
+        super(context, attributeSet, n2, n3);
+    }
+
+    public Consumer getOnClickWhileRestrictedListener() {
+        return this.mRestrictedClickListener;
+    }
+
+    public boolean isUxRestricted() {
+        return this.mUxRestricted;
+    }
+
+    @Override
+    public void onAttached() {
+        super.onAttached();
+        if (!this.getContext().getResources().getBoolean(2131034127)) {
+            return;
+        }
+        this.setWidgetLayoutResource(2131623984);
+    }
+
+    @Override
+    public void onBindViewHolder(atm atm2) {
+        super.onBindViewHolder(atm2);
+        bnv.o(atm2.itemView, this.isUxRestricted());
+    }
+
+    @Override
+    protected void onClick() {
+        this.getPreferenceManager().g(this);
+    }
+
+    @Override
+    public void performClick() {
+        if ((this.isEnabled() || this.isSelectable()) && this.isUxRestricted()) {
+            Consumer consumer = this.mRestrictedClickListener;
+            if (consumer != null) {
+                ag$$ExternalSyntheticApiModelOutline1.m(consumer, (Object)this);
+            }
+            return;
+        }
+        super.performClick();
+    }
+
+    public void setOnClickWhileRestrictedListener(Consumer consumer) {
+        this.mRestrictedClickListener = consumer;
+    }
+
+    public void setUxRestricted(boolean bl2) {
+        if (bl2 != this.mUxRestricted) {
+            this.mUxRestricted = bl2;
+            ((Preference)this).notifyChanged();
+        }
+    }
+}
+
